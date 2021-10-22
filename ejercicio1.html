@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css"> 
+        .estilos { text-transform: capitalize;}   
+        </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <title>Ejercicios Ciclicos</title>
+</head>
+<script>
+/*
+Una empresa vendedora de computadoras dará un descuento sobre el precio a los primeros 15 clientes que compren sus nuevos modelos 
+de computadoras. 
+Los descuentos según modelo de computadora son:
+10% MODELO A1
+15% MODELO A2
+20% MODELO A3
+Si el pago es con tarjeta de puntos de la empresa se da 5% de descuento sobre la compra.
+Imprima en el documento HTML la facturación de cada cliente dejando un espacio por factura. 
+Empresa Computadoras y Más  <h1>  
+Factura Cliente #1    <h2>
+Nombre del Cliente: Juan Perez    <p> El nombre del campo con valor semántico y en negrita.
+Modelo Comprado: A1               <p> El nombre del campo con valor semántico y en negrita, independientemente de escribir en minúscula que 
+lo convierta a mayúscula.
+Descuento Tarjeta Puntos: 5% de la compra <p> El nombre del campo con valor semántico y en negrita.
+Descuento: 10% de la compra   <p> El nombre del campo con valor semántico y en negrita.
+Subtotal: Precio inicial de la computadora sin descuento.   <p> El nombre del campo con valor semántico y en negrita.
+Total: Precio final de la computadora - descuento.        <p> El nombre del campo con valor semántico y en negrita.
+UN ESPACIO ENTRE FACTURAS
+SIGUIENTE FACTURA DEL CLIENTE
+*/
+        for(let i=1;i<=15;i++){
+    var nombre=prompt("Ingrese Su Nombre:")
+    var compra=parseFloat(prompt("Ingrese el valor de la compra:"))
+    var modelo=prompt("Ingrese el Modelo que desea comprar: A1-A2-A3")
+    let tarjeta=prompt("Pagara con tarjeta: Si-No")
+       
+    switch(modelo){
+     case "A1": document.write(`<h1>Empresa De Computadoras y Mas Wilmer Cabrera</h1><br>`)
+                document.write(`<h2>Factura Cliente #${i}</h2><br>`)
+                document.write(`<p class="estilos"><strong>Nombre Del Cliente:</strong> ${nombre}</p><br>`)
+                document.write(`<p class="estilos"><strong>Modelo Comprado:</strong> ${modelo}</p><br>`)
+                document.write(`<p><strong>Compra:</strong> ${compra}</p><br> `)
+                document.write(`<p><strong>Descuento:</strong> ${compra*0.10}</p><br> `)
+                document.write(`<p><strong>Pagara Con Tarjeta:</strong> ${tarjeta}</p><br>`)
+                document.write(`<p><strong>Descuento: 10% De La Compra</strong></p><br> `)
+                if(tarjeta.toUpperCase()==="SI"){
+                document.write(`<p><strong>Descuento Tarjeta:</strong> ${compra*0.05}</p><br>`)
+                document.write(`<strong>Total a Pagar:</strong> ${(compra-(compra*0.15))} `)
+                }else if(tarjeta.toUpperCase()==="NO"){
+                    document.write(`<p><strong>Descuento Tarjeta:</strong> ${0}</p><br>`)
+                    document.write(`<strong>Total a Pagar:</strong> ${compra-(compra*0.10)} `)
+                } break
+     case "A2": document.write(`<h1>Empresa De Computadoras y Mas Wilmer Cabrera</h1><br>`)
+                document.write(`<h2>Factura Cliente #${i}</h2><br>`)
+                document.write(`<p class="estilos"><strong>Nombre Del Cliente:</strong> ${nombre}</p><br>`)
+                document.write(`<p class="estilos"> <strong>Modelo Comprado:</strong> ${modelo}</p><br>`)
+                document.write(`<p><strong>Compra:</strong> ${compra}</p><br> `)
+                document.write(`<p><strong>Descuento:</strong> ${compra*0.15}</p><br> `)
+                document.write(`<p><strong>Pagara Con Tarjeta:</strong> ${tarjeta}</p><br>`)
+                document.write(`<p><strong>Descuento: 15% De La Compra</strong></p><br> `)
+                if(tarjeta.toUpperCase()==="SI"){
+                document.write(`<p><strong>Descuento Tarjeta:</strong> ${compra*0.05}</p><br>`)
+                document.write(`<strong>Total A Pagar:</strong> ${(compra-(compra*0.20))} `)
+                }else if(tarjeta.toUpperCase()==="NO"){
+                    document.write(`<p><strong>Descuento Tarjeta:</strong> ${0}</p><br>`)
+                    document.write(`<strong>Total A Pagar:</strong> ${compra-(compra*0.15)} `)
+                } break
+               
+     case "A3": document.write(`<h1>Empresa De Computadoras y Mas Wilmer Cabrera</h1><br>`)
+                document.write(`<h2>Factura Cliente #${i}</h2><br>`)
+                document.write(`<p class="estilos"><strong>Nombre Del Cliente:</strong> ${nombre}</p><br>`)
+                document.write(`<p class="estilos"><strong>Modelo Comprado:</strong> ${modelo}</p><br>`)
+                document.write(`<p><strong>Compra:</strong> ${compra}</p><br> `)
+                document.write(`<p><strong>Descuento:</strong> ${compra*0.20}</p><br> `)
+                document.write(`<p><strong>Pagara Con Tarjeta:</strong> ${tarjeta}</p><br>`)
+                document.write(`<p><strong>Descuento: 20% de la compra</strong></p><br> `)
+                if(tarjeta.toUpperCase()==="SI"){
+                document.write(`<p><strong>Descuento Tarjeta:</strong> ${compra*0.05}</p><br>`)
+                document.write(`<strong>Total A Pagar:</strong> ${(compra-(compra*0.25))} `)
+                }else if(tarjeta.toUpperCase()==="NO"){
+                    document.write(`<p><strong>Descuento Tarjeta:</strong> ${0}</p><br>`)
+                    document.write(`<strong>Total A Pagar:</strong> ${compra-(compra*0.20)} `)
+                } break
+                default:alert(`Error: No Se Encuentra El Dato <br>`)
+                break
+        }
+    }
+</script>
+<body>
+    
+</body>
+</html>
